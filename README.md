@@ -1,3 +1,264 @@
+
+-------------------------eclipse工具Maven lifecyle-mappings的配置：lifecyle-mapping-metadata.xml---------------
+
+<?xml version="1.0" encoding="UTF-8"?>
+<lifecycleMappingMetadata>
+  <pluginExecutions>
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>buildnumber-maven-plugin</artifactId>
+        <goals>
+          <goal>create-timestamp</goal>
+        </goals>
+        <versionRange>[0.0,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <goals>
+          <goal>list</goal>
+        </goals>
+        <versionRange>[0.0,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.zeroturnaround</groupId>
+        <artifactId>jrebel-maven-plugin</artifactId>
+        <goals>
+          <goal>generate</goal>
+        </goals>
+        <versionRange>[0.0,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>gwt-maven-plugin</artifactId>
+        <goals>
+          <goal>compile</goal>
+        </goals>
+        <versionRange>[0.0,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <goals>
+          <goal>copy-dependencies</goal>
+          <goal>unpack</goal>
+        </goals>
+        <versionRange>[0.0,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-remote-resources-plugin</artifactId>
+        <goals>
+          <goal>bundle</goal>
+        </goals>
+        <versionRange>[1.5,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>    
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <goals>
+          <goal>add-resource</goal>
+          <goal>parse-version</goal>
+        </goals>
+        <versionRange>[1.9.1,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+    
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.commonjava.maven.plugins</groupId>
+        <artifactId>directory-maven-plugin</artifactId>
+        <goals>
+          <goal>highest-basedir</goal>
+        </goals>
+        <versionRange>[0.1,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+    
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.pentaho.maven.plugins</groupId>
+        <artifactId>license-helper-maven-plugin</artifactId>
+        <goals>
+          <goal>check-license</goal>
+          <goal>bundle</goal>
+        </goals>
+        <versionRange>[1.5,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+    
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>com.soebes.maven.plugins</groupId>
+        <artifactId>iterator-maven-plugin</artifactId>
+        <goals>
+          <goal>iterator</goal>
+          <goal>bundle</goal>
+        </goals>
+        <versionRange>[0.4,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>
+    
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>org.apache.karaf.tooling</groupId>
+        <artifactId>karaf-maven-plugin</artifactId>
+        <goals>
+          <goal>features-generate-descriptor</goal>
+        </goals>
+        <versionRange>[3.0.3,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>    
+    
+    <pluginExecution>
+      <pluginExecutionFilter>
+        <groupId>com.google.code.maven-replacer-plugin</groupId>
+        <artifactId>replacer</artifactId>
+        <goals>
+          <goal>replace</goal>
+        </goals>
+        <versionRange>[1.5.2,)</versionRange>
+      </pluginExecutionFilter>
+      <action>
+        <ignore />
+      </action>
+    </pluginExecution>    
+        
+        
+  </pluginExecutions>
+</lifecycleMappingMetadata>
+
+--------------------------------------------------------------------------------------------------
+
+
+-------------------------------------maven的setting.xml配置-----------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <!-- This is the recommended settings.xml for development of Hitachi Vantara projects. -->
+	<localRepository>D:/apache-maven-3.6.0/repository-pdi</localRepository>
+  <!--
+  If your wish to mirror everything through pentaho-public's repo uncomment bellow. Not recommended
+  for external developers.
+  -->
+  <!--
+  <mirrors>
+    <mirror>
+      <id>pentaho-public</id>
+      <url>http://nexus.pentaho.org/content/groups/omni</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>
+  -->
+
+  <!--
+  You might want to tweak the 'updatePolicy' configuration to fit your need on having updated snapshots and
+  releases. Our recommendation is to set it to 'never' and run maven with the '-U' flag when needed.
+  -->
+  <profiles>
+    <profile>
+      <id>pentaho</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <repository>
+          <id>pentaho-public</id>
+          <name>Pentaho Public</name>
+          <url>http://nexus.pentaho.org/content/groups/omni</url>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>pentaho-public</id>
+          <name>Pentaho Public</name>
+          <url>http://nexus.pentaho.org/content/groups/omni</url>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>always</updatePolicy>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  <!-- this lets you call plugins from these groups in their short form -->
+  <pluginGroups>
+    <pluginGroup>org.pentaho.maven.plugins</pluginGroup>
+    <pluginGroup>com.pentaho.maven.plugins</pluginGroup>
+    <pluginGroup>com.github.spotbugs</pluginGroup>
+  </pluginGroups>
+</settings>
+
+
+
+
+——————————————————————————————————————————————————————————————————————————————————————————————————
 # Pentaho Data Integration #
 
 Pentaho Data Integration ( ETL ) a.k.a Kettle
